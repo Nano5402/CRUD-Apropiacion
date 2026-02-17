@@ -1,0 +1,127 @@
+:root {
+  /* Paleta de colores Púrpura */
+  --color-primario: #6200ea;       /* Púrpura intenso */
+  --color-secundario: #b388ff;     /* Lavanda suave */
+  --color-fondo: #f3e5f5;          /* Fondo muy claro */
+  --color-texto: #2d0c44;          /* Texto oscuro con tinte violeta */
+  --color-blanco: #ffffff;
+  
+  /* Colores de estado */
+  --color-peligro: #d32f2f;        /* Rojo para eliminar */
+  --color-exito: #388e3c;          /* Verde para completar */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  margin: 0;
+}
+
+h1, h2 {
+  color: #000000;
+  text-align: center;
+}
+
+/* Secciones generales */
+section {
+  background-color: var(--color-blanco);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(98, 0, 234, 0.1); /* Sombra violeta suave */
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs y Formulario */
+input[type="text"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid var(--color-secundario);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--color-primario);
+}
+
+/* Botones Generales */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#addTaskBtn {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  width: 100%;
+}
+
+/* Lista de Tareas */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: var(--color-blanco);
+  border-bottom: 1px solid #e0e0e0;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border-left: 5px solid var(--color-secundario);
+}
+
+/* Contenedor de texto de la tarea */
+li div.info {
+  margin-bottom: 5px;
+}
+
+/* Botones dentro de la lista */
+.updateBtn {
+  background-color: var(--color-secundario); /* Lavanda */
+  color: var(--color-texto);
+}
+
+.deleteBtn {
+  background-color: var(--color-peligro);
+  color: white;
+}
+
+.statusBtn {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+/* Ajuste responsive para botones en línea */
+@media (min-width: 500px) {
+  li {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .acciones {
+    display: flex;
+    gap: 5px;
+  }
+}
